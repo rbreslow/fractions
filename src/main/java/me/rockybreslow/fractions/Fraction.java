@@ -19,6 +19,18 @@ public class Fraction implements Comparable<Fraction> {
      * @param numerator fraction numerator
      * @param denominator fraction denominator
      *
+     */
+    public Fraction() {
+        this.numerator = 1;
+        this.denominator = 1;
+    }
+
+    /**
+     * Constructs a fraction
+     *
+     * @param numerator fraction numerator
+     * @param denominator fraction denominator
+     *
      * @exception IllegalArgumentException if denominator is equal to zero.
      */
     public Fraction(int numerator, int denominator) {
