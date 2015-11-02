@@ -54,11 +54,11 @@ public class FractionMain {
         Fraction fractionB = fractions.get(indexB);
 
         System.out.print(
-                "[1] Add" + "\n" +
+                "[1] Add"      + "\n" +
                 "[2] Subtract" + "\n" +
                 "[3] Multiply" + "\n" +
-                "[4] Divide" + "\n" +
-                "[5] Compare" + "\n" +
+                "[4] Divide"   + "\n" +
+                "[5] Compare"  + "\n" +
                 "\n" +
                 "Enter an operation ID to perform: "
         );
