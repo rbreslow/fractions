@@ -128,6 +128,7 @@ public class FractionMain {
         // Try to deserialize fractions, if failure then we handle exception and create empty List
         try {
             fractions = loadFractionsFromFile(FileSystems.getDefault().getPath("numberslist.txt"));
+            System.out.println("Successfully read " + fractions.size() + " fractions from file.");
         } catch (IOException e) {
             System.err.println(e.toString() + " occurred reading fractions from file.");
             fractions = new ArrayList<>();
