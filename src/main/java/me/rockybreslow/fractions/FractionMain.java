@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Scanner;
 
 /**
- * Demonstration class for Fraction class
+ * Demonstration class for Fraction class.
  *
  * @author Rocky Breslow
  * @version 1.0

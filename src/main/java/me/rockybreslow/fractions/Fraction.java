@@ -1,7 +1,7 @@
 package me.rockybreslow.fractions;
 
 /**
- * Implementation of a mathematical Fraction
+ * Implementation of a mathematical Fraction.
  *
  * @author Rocky Breslow
  * @version 1.0
