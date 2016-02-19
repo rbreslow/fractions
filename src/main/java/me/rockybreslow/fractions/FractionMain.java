@@ -1,6 +1,10 @@
 package me.rockybreslow.fractions;
 
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -13,20 +17,53 @@ import java.util.Scanner;
 
 public class FractionMain {
     public static void main(String[] args) {
+        /** User input */
         Scanner s = new Scanner(System.in);
-        ArrayList<Fraction> fractions = new ArrayList<Fraction>();
 
-        // Add 10 randomly generated fractions to the ArrayList
-        for(int i = 0; i < 10; i++) {
-            fractions.add(new Fraction((int) (Math.random() * 10) + 1, (int) (Math.random() * 10) + 1));
+        /** List of fractions to manipulate */
+        List<Fraction> fractions = new ArrayList<>();
+
+        /** The file which numbers are read from */
+        File numberListFile = new File("numberslist.txt");
+
+        // Attempt to read the file if possible and add fractions to the list
+        if(!numberListFile.exists()) {
+            System.out.println("`numberslist.txt` does not exist.");
+        } else if(!numberListFile.canRead()) {
+            System.out.println("You do not have permission to access `numberslist.txt`.");
+        } else {
+            try {
+                // Read in all lines of the file to a list
+                List<String> lines = Files.readAllLines(numberListFile.toPath());
+
+                // Every other number we input create a new fraction (numerator, then denominator)
+                int numerator = 0;
+                boolean doSetDenominator = false;
+                for(String line : lines) {
+                    // We don't want an integer
+                    if(!isInteger(line)) {
+                        continue;
+                    }
+
+                    // Either we're storing our numerator or instantiating our fraction with the denominator
+                    if(doSetDenominator) {
+                        fractions.add(new Fraction(numerator, Integer.parseInt(line)));
+                        doSetDenominator = false;
+                    } else {
+                        numerator = Integer.parseInt(line);
+                        doSetDenominator = true;
+                    }
+                }
+            } catch(IOException e) {
+                System.out.println("Error reading `numberlist.txt`.");
+            }
         }
 
+        // Ask for user input until an illegal fraction (division by zero) occurs
         boolean cont = true;
-
         do {
             System.out.print("Enter fraction (e.g. 1/2). Enter an illegal fraction (e.g. 0/0) to finish. ");
 
-            // Continue program if fraction is illegal
             try {
                 fractions.add(getFraction(s));
             } catch(IllegalArgumentException e) {
@@ -34,12 +71,15 @@ public class FractionMain {
             }
         } while(cont);
 
+        // Dump the fractions that we've collected
         for(int i = 0; i < fractions.size(); i++) {
             System.out.println("[" + (i + 1) + "] " + fractions.get(i));
         }
 
+        // Manipulate fractions
         System.out.print("\nEnter two fraction IDs to manipulate: ");
 
+        // Retrieve fraction indexes
         int indexA = 0;
         do {
             indexA = getInteger(s) - 1;
@@ -66,6 +106,7 @@ public class FractionMain {
         // We need to copy fractionA so we can print our results
         Fraction fractionC = new Fraction(fractionA);
 
+        // Do it
         switch(getInteger(s)) {
             case 1:
                 fractionC.add(fractionB);

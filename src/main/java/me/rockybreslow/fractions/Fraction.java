@@ -16,8 +16,6 @@ public class Fraction implements Comparable<Fraction> {
     /**
      * Constructs a fraction
      *
-     * @param numerator fraction numerator
-     * @param denominator fraction denominator
      */
     public Fraction() {
         this.numerator = 1;
