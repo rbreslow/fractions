@@ -1,7 +1,7 @@
 package me.rockybreslow.fractions;
 
 /**
- * Implementation of a mathematical Fraction
+ * Implementation of a mathematical Fraction.
  *
  * @author Rocky Breslow
  * @version 1.0
@@ -14,10 +14,7 @@ public class Fraction implements Comparable<Fraction> {
     private int denominator;
 
     /**
-     * Constructs a fraction
-     *
-     * @param numerator fraction numerator
-     * @param denominator fraction denominator
+     * Constructs a fraction.
      */
     public Fraction() {
         this.numerator = 1;
@@ -25,7 +22,7 @@ public class Fraction implements Comparable<Fraction> {
     }
 
     /**
-     * Constructs a fraction
+     * Constructs a fraction.
      *
      * @param numerator fraction numerator
      * @param denominator fraction denominator
@@ -44,7 +41,7 @@ public class Fraction implements Comparable<Fraction> {
     }
 
     /**
-     * Constructs a fraction
+     * Constructs a fraction.
      *
      * @param fraction the fraction to copy
      */
@@ -54,7 +51,7 @@ public class Fraction implements Comparable<Fraction> {
     }
 
     /**
-     * Gets the numerator
+     * Gets the numerator.
      *
      * @return the numerator
      */
@@ -63,7 +60,7 @@ public class Fraction implements Comparable<Fraction> {
     }
 
     /**
-     * Gets the denominator
+     * Gets the denominator.
      *
      * @return the denominator
      */
@@ -72,7 +69,7 @@ public class Fraction implements Comparable<Fraction> {
     }
 
     /**
-     * Gets the decimal value
+     * Gets the decimal value.
      *
      * @return the decimal value
      */
@@ -81,7 +78,7 @@ public class Fraction implements Comparable<Fraction> {
     }
 
     /**
-     * Sets the numerator and simplifies
+     * Sets the numerator and simplifies.
      *
      * @param numerator the numerator
      */
@@ -92,10 +89,9 @@ public class Fraction implements Comparable<Fraction> {
     }
 
     /**
-     * Sets the denominator and simplifies
+     * Sets the denominator and simplifies.
      *
      * @param denominator the denominator
-     *
      * @exception IllegalArgumentException if denominator is equal to zero.
      */
     public void setDenominator(int denominator) {
@@ -109,7 +105,7 @@ public class Fraction implements Comparable<Fraction> {
     }
 
     /**
-     * Simplifies the fraction
+     * Simplifies the fraction.
      */
     private void simplify() {
         // Find the greatest common divisor between the numerator and denominator
@@ -123,7 +119,7 @@ public class Fraction implements Comparable<Fraction> {
     }
 
     /**
-     * Adds a fraction to the existing fraction
+     * Adds a fraction to the existing fraction.
      *
      * @param fraction the fraction to add
      */
@@ -146,7 +142,7 @@ public class Fraction implements Comparable<Fraction> {
     }
 
     /**
-     * Subtracts a fraction to the existing fraction
+     * Subtracts a fraction to the existing fraction.
      *
      * @param fraction the fraction to subtract
      */
@@ -157,7 +153,7 @@ public class Fraction implements Comparable<Fraction> {
     }
 
     /**
-     * Multiplies a fraction by the existing fraction
+     * Multiplies a fraction by the existing fraction.
      *
      * @param fraction the fraction to multiply
      */
@@ -171,7 +167,7 @@ public class Fraction implements Comparable<Fraction> {
     }
 
     /**
-     * Divides a fraction by the existing fraction
+     * Divides a fraction by the existing fraction.
      *
      * @param fraction the fraction to divide
      */
@@ -203,7 +199,7 @@ public class Fraction implements Comparable<Fraction> {
     }
 
     /**
-     * This gets a formatted version of the fraction value contained by the object
+     * This gets a formatted version of the fraction value contained by the object.
      *
      * @return formatted fraction, e.g. 1/2
      */
@@ -214,7 +210,7 @@ public class Fraction implements Comparable<Fraction> {
     }
 
     /**
-     * Finds the greatest common divisor between two numbers
+     * Finds the greatest common divisor between two numbers.
      *
      * @param first the first number
      * @param second the second number
@@ -229,7 +225,7 @@ public class Fraction implements Comparable<Fraction> {
     }
 
     /**
-     * Finds the lowest common multiple between two numbers
+     * Finds the lowest common multiple between two numbers.
      *
      * @param first the first number
      * @param second the second number
